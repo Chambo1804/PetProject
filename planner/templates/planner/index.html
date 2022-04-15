@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная::Планировщик задач</title>
+</head>
+<body>
+    <h1>Задачи</h1>
+    {% for dl in delos %}
+    <div>
+        <h2>{{dl.title }}</h2>
+        <p>{{dl.content}}</p>
+        <p>{{dl.importance}}</p>
+        <p>{{dl.time}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
