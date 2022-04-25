@@ -1,6 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="{% static '/planner/style.css' %}">
     <meta charset="UTF-8">
     <title> {% block title %}Главная{% endblock %}::Планировщик задач</title>
 </head>
