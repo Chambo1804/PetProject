@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление задачи</title>
+</head>
+<body>
+    <h1>Добавление задачи</h1>
+    <div>
+        <a href="{% url 'index' %}">Главная</a>
+        {% for type in types %}
+        <a href="{% url 'by_type' type.pk %}">{{ type.name }}</a>
+        {% endfor %}
+        <a href="/planner/add/">Добавить</a>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Добавить">
+    </form>
+</body>
+</html>

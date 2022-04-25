@@ -8,10 +8,11 @@
     <h1>Задачи</h1>
     <h2>Тип задачи: {{ current_type.name }}</h2>
     <div>
-        <a href="/planner/">Главная</a>
+        <a href="{% url 'index' %}">Главная</a>
         {% for type in types %}
-        <a href="/planner/{{type.pk}}/">{{ type.name }}</a>
+        <a href="{% url 'by_type' type.pk %}">{{ type.name }}</a>
         {% endfor %}
+        <a href="/planner/add/">Добавить</a>
     </div>
     {% for delo in delos %}
     <div>

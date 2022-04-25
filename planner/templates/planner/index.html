@@ -11,11 +11,13 @@
         {% for type in types %}
         <a href="/planner/{{type.pk }}/">{{ type.name }}</a>
         {% endfor %}
+        <a href="/planner/add/">Добавить</a>
     </div>
     {% for delo in delos %}
     <div>
         <h2> {{ delo.title }} </h2>
         <p> Описание - {{delo.content}}</p>
+        <p><a href="/planner/{{ delo.type.pk }}/"> {{ delo.type.name }} </a> </p>
         <p> Важность - {{delo.importance}}</p>
     </div>
     {% endfor %}
