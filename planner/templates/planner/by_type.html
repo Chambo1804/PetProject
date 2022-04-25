@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ current_type.name }} :: Задачи</title>
-</head>
-<body>
-    <h1>Задачи</h1>
-    <h2>Тип задачи: {{ current_type.name }}</h2>
-    <div>
-        <a href="{% url 'index' %}">Главная</a>
-        {% for type in types %}
-        <a href="{% url 'by_type' type.pk %}">{{ type.name }}</a>
-        {% endfor %}
-        <a href="/planner/add/">Добавить</a>
+{% extends "layout/basic.html" %}
+{% block title %} {{current_type.name }} {% endblock %}
+{% block content %}
     </div>
     {% for delo in delos %}
     <div>
@@ -21,5 +9,4 @@
         <p> Важность - {{delo.importance}}</p>
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
