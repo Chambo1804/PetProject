@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная::Планировщик задач</title>
+    <title>{{ current_type.name }} :: Задачи</title>
 </head>
 <body>
     <h1>Задачи</h1>
+    <h2>Тип задачи: {{ current_type.name }}</h2>
     <div>
         <a href="/planner/">Главная</a>
         {% for type in types %}
-        <a href="/planner/{{type.pk }}/">{{ type.name }}</a>
+        <a href="/planner/{{type.pk}}/">{{ type.name }}</a>
         {% endfor %}
     </div>
     {% for delo in delos %}

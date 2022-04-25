@@ -6,6 +6,7 @@ class delo(models.Model):
     content = models.TextField(null=True, blank=True, verbose_name='Описание задачи')
     time = models.DateTimeField(null=True, verbose_name='Время задачи')
     importance = models.SmallIntegerField(null=True, verbose_name='Важность задачи')
+    type = models.ForeignKey('Type', null=True, on_delete=models.PROTECT, verbose_name='Тип задачи')
 
     class Meta:
         verbose_name_plural = 'Задачи'
@@ -13,8 +14,11 @@ class delo(models.Model):
         ordering = ['time']
 
 class Type(models.Model):
+
     name = models.CharField(max_length=20, db_index=True, verbose_name='Тип задачи')
 
+    def __str__(self):
+        return self.name
     class Meta:
         verbose_name_plural = 'Типы задач'
         verbose_name = 'Тип задач'
